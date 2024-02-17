@@ -16,17 +16,6 @@ const getPokemonsHandler = async (req, res) => {
   }
 };
 
-// const getDetailPokemonsHandler = async (req, res) => {
-//   const { id } = req.params;
-//   const source = isNaN(id) ? "api" : "db";
-
-//   try {
-//     const pokemon = await getPokemonById(id, source);
-//     res.status(200).json(pokemon);
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// };
 
 const getDetailPokemonsHandler = async (req, res) => {
   const { id } = req.params
