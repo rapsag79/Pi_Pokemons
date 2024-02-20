@@ -1,0 +1,139 @@
+.card-container{
+  /* margin-top: 1rem; */
+  display: flex;
+  flex-direction: column;
+  background:linear-gradient(to top,
+      rgb(5, 109, 109) 10%,
+      #128f8f 40%,
+      rgb(31, 188, 188) 50%,
+      rgb(21, 225, 225) 100%
+      );
+  align-items: center;
+  justify-content: center;
+  height: 25rem;
+  border: .1rem solid grey;
+  /* padding: 1rem; */
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform .55s ease-out;
+  border-radius: 1rem;
+  transform: scale(.8);
+  font-size: medium;
+}
+
+
+.card-container:hover{
+  transform: scale(0.7);
+  border:solid .2rem #272820c4;
+  cursor: pointer;
+}
+
+.img{
+  z-index: 1;
+  width: 15rem;
+  height: 10rem;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform .55s ease-in-out;
+  transform: scale(1);
+}
+
+.img:hover{
+  transform: scale(1.8);
+  /* border:solid .2rem #272820c4; */
+  /* cursor: pointer; */
+}
+
+.card-grid {
+  display: inline-table;
+  font-size: .9rem;
+  font-family:cursive;
+  font-weight:bolder ;
+}
+
+
+.P-atack{
+  height: auto;;
+  text-align: center;
+  /* border: solid #ffffff 1px; */
+  border-radius: 2rem;
+  font-size: larger;
+  color: aliceblue;
+  
+}
+
+.section-container{
+  display: flex;
+  flex-direction: row;
+  padding:.3rem;
+}
+
+.section-container1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.P-gral{
+  
+  font-size: larger;
+  font-style: oblique;
+  font-family: Cambria,   Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: aliceblue;
+}
+
+.type{
+  padding: 0 5px 0 5px;
+  margin: 0 8px 0 8px;
+  height: 4rem;
+  color: aliceblue;
+  border-left:solid 1px white;
+  border-right:solid 1px white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+/*Ejemplo de spin para rotar la img
+
+*/
+/* .App {
+  text-align: center;
+  background:#61dafb ;
+  margin-top:-1.4rem;
+}
+
+.img {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .img {
+    animation: img-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes img-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

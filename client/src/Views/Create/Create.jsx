@@ -1,4 +1,4 @@
-import Styles from "./Create.styles.css"
+import Styles from "./Create.module.css"
 
 const Create = () => {
   return (

@@ -1,11 +1,29 @@
-import Styles from "./SearchBar.styles.css"
+import { useState } from "react";
+import styles from "./SearchBar.module.css";
 
-const SearchBar = () => {
+export default function SearchBar( {handleChange, handleSubmit}) {
+  const [id, setId] = useState("");
+  
   return (
-    <div className={Styles.divSp}>
-      <h2>Hola desde el Buscador</h2>
-    </div>
-  )
+    <form className={styles}
+    >
+      <input
+        className={styles}
+        type="search"
+        placeholder="Buscar por ID"
+        onChange={ handleChange }
+        value={id}
+      />
+      <button
+        className={styles}
+        activeclassname={styles.active}
+        onClick={() => {
+          handleSubmit();
+          setId("");
+        }}
+      >
+        Buscar
+      </button>
+    </form>
+  );
 }
-
-export default SearchBar;

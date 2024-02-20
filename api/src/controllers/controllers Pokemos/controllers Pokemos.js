@@ -3,15 +3,42 @@ const { Pokemon } = require("../../db");
 const infoCleaner = require("../../utils/infoCleaner");
 const { API } = process.env;
 
-const getAllPokemons = async () => {
+// const getAllPokemons = async () => {
+//   const pokemonsDB = await Pokemon.findAll();
+//   let allPokemons = [];
+//   let nextUrl = `${API}`;
+
+//   while (nextUrl) {
+//     const response = await axios.get(nextUrl);
+//     const data = response.data;
+//     const pokemonsApi = data.results.map(pokemon => ({
+//       name: pokemon.name,
+//       url: pokemon.url
+//     }));
+//     allPokemons = allPokemons.concat(pokemonsApi);
+//     nextUrl = data.next;
+//   }
+
+//   return [...pokemonsDB, ...allPokemons];
+// };
+
+const getAllPokemons = async (url = `${API}`, allPokemons = []) => {
   const pokemonsDB = await Pokemon.findAll();
-  const response = await axios.get(`${API}`);
-  const pokemonsApi = response.data.results.map(pokemon => ({
+  const response = await axios.get(url);
+  const data = response.data;
+  const pokemonsApi = data.results.map(pokemon => ({
     name: pokemon.name,
     url: pokemon.url
   }));
-
-  return [...pokemonsDB, ...pokemonsApi];
+  allPokemons = allPokemons.concat(pokemonsApi);
+  
+  if (data.next) {
+    // Si hay una URL siguiente, llamamos de nuevo a la función recursivamente
+    return getAllPokemons(data.next, allPokemons);
+  } else {
+    // Si no hay URL siguiente, devolvemos todos los pokemons
+    return [...pokemonsDB, ...allPokemons];
+  }
 };
 
 const getPokemonByName = async (name) => {

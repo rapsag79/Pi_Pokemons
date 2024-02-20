@@ -16,6 +16,32 @@ const getPokemonsHandler = async (req, res) => {
   }
 };
 
+// const getAllPokemons = async () => {
+//   let allPokemons = [];
+
+//   // Función recursiva para obtener todas las páginas
+//   const fetchPokemons = async (url) => {
+//     const response = await axios.get(url);
+//     const data = response.data;
+//     const pokemons = data.results.map(pokemon => ({
+//       name: pokemon.name,
+//       url: pokemon.url
+//     }));
+//     allPokemons = allPokemons.concat(pokemons);
+
+//     // Si hay una próxima página, llamamos de nuevo a la función recursivamente
+//     if (data.next) {
+//       await fetchPokemons(data.next);
+//     }
+//   };
+
+//   // Llamada inicial para obtener la primera página
+//   await fetchPokemons(API);
+
+//   return allPokemons;
+// };
+
+
 
 const getDetailPokemonsHandler = async (req, res) => {
   const { id } = req.params

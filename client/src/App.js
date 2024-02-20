@@ -1,17 +1,21 @@
-import Home from './Views/Home/Home';
-import './App.css';
-import Detail from './Views/Detail/Detail';
-import Create from './Views/Create/Create';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import Detail from './Views/Detail/Detail';
+import About from './Views/About/About';
+import Home from './Views/Home/Home';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Henry Pokemon</h1>
-      <Home />
-      <Detail />
-      <Create/>
 
+  return (
+
+    <div>
+    <Router>
+      <Switch>
+        <Route path="/home" component={ Home  } />
+        <Route path="/about" component={ About  } />
+        <Route path="/detail/:id" component={ Detail } />
+      </Switch>
+    </Router>
     </div>
   );
 }
